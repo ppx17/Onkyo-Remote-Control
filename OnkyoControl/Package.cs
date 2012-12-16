@@ -7,10 +7,11 @@ namespace OnkyoControl
     {
         private byte[] _buffer;
         private int _pointer;
-        
+        private string _command;
+
         public Package(string command)
         {
-            //
+            _command = command;
             uint commandLength = ((uint) command.Length) + 2;
             uint packageLength = commandLength + 1 + 16;
 
@@ -35,6 +36,11 @@ namespace OnkyoControl
         public int Length()
         {
             return _buffer.Length;
+        }
+
+        public bool IsQuestion()
+        {
+            return _command.EndsWith("QSTN");
         }
 
         private void AppendHeader()

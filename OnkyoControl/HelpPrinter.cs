@@ -16,10 +16,26 @@ namespace OnkyoControl
 
         public static void PrintHelp()
         {
-            Console.WriteLine("Usage: OnkyoControl.exe <ipaddress> <command>");
+            Console.WriteLine("Usage: OnkyoControl.exe /ip=[ip] (/command=[command]) (/c) (/increaseVolume=[steps]) (/decreaseVolume=[steps]) (/outputDecimal)");
             Console.WriteLine("");
-            Console.WriteLine("To see the list of commands use OnkyoControl.exe -c");
-            Console.WriteLine("Note, you might want to pipe that to more, like: OnkyoControl.exe -c | more");
+            Console.WriteLine("/ip=[ip]                 This is the only required argument, replace [ip] with the receivers IP Address");
+            Console.WriteLine("/command=[command]       The ISCP command you wish to execute, see /c for a list of suggested parameters.");
+            Console.WriteLine("                          Use Google to find a full list of commands supported by your receiver.");
+            Console.WriteLine("/c                       When this command is set, a suggested list of commands is shown");
+            Console.WriteLine("/increaseVolume=[steps]  Increase the master volume by [steps] steps.");
+            Console.WriteLine("/decreaseVolume=[steps]  Decrease the master volume by [steps] steps.");
+            Console.WriteLine("/setVolume=[volume]      Set the volume to [volume]");
+            Console.WriteLine("/outputDecimal           When asing a question (A command ending in QSTN), this option converts ");
+            Console.WriteLine("                          the response to a directly usable decimal in stead of the Hex codes.");
+            Console.WriteLine("  **NOTE** Only one of increase/decrease/setVolume will be executed when both are given in the same command.");
+            Console.WriteLine("  **NOTE** When a increase/decrease/setVolume volume command is specified, no other commands are executed.");
+            Console.WriteLine("  **NOTE** The increase/decrease/setVolume arguments are hardlimited to a max of 80.");
+            Console.WriteLine();
+            Console.WriteLine("Errorcodes: ");
+            Console.WriteLine("0   All OK");
+            Console.WriteLine("1   Not all required parameters are given");
+            Console.WriteLine("2   Invalid IP-Address");
+            Console.WriteLine("3   Some exception occured, receiver is probably unreachable");
         }
         public static void InvalidIP()
         {
@@ -44,6 +60,22 @@ PWR01     Poweron
 ========= Muting =========
 AMT00     Audio muting off
 AMT01     Audio muting on
+
+========= Volume =========
+MVLxx     Replace xx by hex value 00-64, be carefull with high values!
+MVLUP     Sets volume level up
+MVLDOWN   Sets volume level down
+
+========= OSD =========
+OSDMENU   Menu Key
+OSDUP     Up Key
+OSDDOWN   Down Key
+OSDRIGHT  Right Key
+OSDLEFT   Left Key
+OSDENTER  Enter Key
+OSDEXIT   Exit key
+OSDAUDIO  Audio Adjust Key
+OSDVIDEO  Video Adjust Key
 
 ========= A/B Speakers =========
 SPA00     Speaker A Off

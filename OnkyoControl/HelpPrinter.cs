@@ -21,7 +21,8 @@ namespace OnkyoControl
             Console.WriteLine("/ip=[ip]                 This is the only required argument, replace [ip] with the receivers IP Address");
             Console.WriteLine("/command=[command]       The ISCP command you wish to execute, see /c for a list of suggested parameters.");
             Console.WriteLine("                          Use Google to find a full list of commands supported by your receiver.");
-            Console.WriteLine("/c                       When this command is set, a suggested list of commands is shown");
+            Console.WriteLine("/c                       When this parameter is set, a suggested list of commands is shown");
+            Console.WriteLine("/noConsole               When this parameter is set, there will be no visible console. Usefull for hotkeys etc.");
             Console.WriteLine("/increaseVolume=[steps]  Increase the master volume by [steps] steps.");
             Console.WriteLine("/decreaseVolume=[steps]  Decrease the master volume by [steps] steps.");
             Console.WriteLine("/setVolume=[volume]      Set the volume to [volume]");

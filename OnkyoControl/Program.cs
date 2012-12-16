@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using System.Runtime.InteropServices;
 
 namespace OnkyoControl
 {
@@ -7,10 +8,18 @@ namespace OnkyoControl
     {
         private static Arguments programArguments;
         private static Receiver receiver;
+        
+        [DllImport("kernel32.dll")]
+        private static extern bool AttachConsole(int dwProcessId);
 
         static int Main(string[] args)
         {
             programArguments = new Arguments(args);
+
+            if( ! programArguments.HasArgument("noConsole"))
+            {
+                AttachConsole(-1);
+            }
 
             if (CheckCommandListHelpParams()) return 0; // List was requested and given, so exit without errorcode
 

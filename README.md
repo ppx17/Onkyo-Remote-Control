@@ -5,5 +5,5 @@ This is a simple, commandline based remote controller for the Onkyo NR series ba
 
 Usage
 -----
-OnkyoControl.exe <ipaddress> <command>
+OnkyoControl.exe [ipaddress] [command]
 

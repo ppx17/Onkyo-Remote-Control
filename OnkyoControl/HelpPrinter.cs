@@ -7,7 +7,7 @@ namespace OnkyoControl
         public static void PrintCopyright()
         {
             Console.WriteLine("");
-            const string copyright = "* recievecontrol.exe by Niels Oostindiër, https://github.com/ *";
+            const string copyright = "* recievecontrol.exe, https://github.com/ppx17/Onkyo-Remote-Control *";
             Console.WriteLine(new string('*', copyright.Length));
             Console.WriteLine(copyright);
             Console.WriteLine(new string('*', copyright.Length));

@@ -7,7 +7,7 @@ namespace OnkyoControl
         public static void PrintCopyright()
         {
             Console.WriteLine("");
-            const string copyright = "* recievecontrol.exe, https://github.com/ppx17/Onkyo-Remote-Control *";
+            const string copyright = "* OnkyoControl.exe, https://github.com/ppx17/Onkyo-Remote-Control *";
             Console.WriteLine(new string('*', copyright.Length));
             Console.WriteLine(copyright);
             Console.WriteLine(new string('*', copyright.Length));
@@ -16,10 +16,10 @@ namespace OnkyoControl
 
         public static void PrintHelp()
         {
-            Console.WriteLine("Usage: recievercontrol.exe <ipaddress> <command>");
+            Console.WriteLine("Usage: OnkyoControl.exe <ipaddress> <command>");
             Console.WriteLine("");
-            Console.WriteLine("To see the list of commands use recievercontrol.exe -c");
-            Console.WriteLine("Note, you might want to pipe that to more, like: recievercontrol.exe -c | more");
+            Console.WriteLine("To see the list of commands use OnkyoControl.exe -c");
+            Console.WriteLine("Note, you might want to pipe that to more, like: OnkyoControl.exe -c | more");
         }
         public static void InvalidIP()
         {
@@ -29,7 +29,7 @@ namespace OnkyoControl
 
         public static void PrintCommandlist()
         {
-            Console.Write(_commandList);
+            Console.Write(CommandList);
         }
 
         public static void ExceptionOccured(Exception exception)
@@ -37,8 +37,7 @@ namespace OnkyoControl
             Console.WriteLine("! Something went wront while sending the command: {0}", exception.Message);
         }
 
-        private static string _commandList =
-            @"========= Power =========
+        private const string CommandList = @"========= Power =========
 PWR00     Poweroff
 PWR01     Poweron
 
@@ -121,7 +120,6 @@ SLI32     SIRIUS*1
 SLIUP     Selector Position Wrap-Around Up
 SLIDOWN   Selector Position Wrap-Around Down
 
-This list is only intended as a guide, specific input selections may be different per reciever model";
-
+This list is only intended as a guide, specific input selections may be different per receiver model";
     }
 }

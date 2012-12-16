@@ -13,6 +13,7 @@ OnkyoControl.exe /ip=[ip] (/command=[command]) (/c) (/increaseVolume=[steps]) (/
 /command=[command]       The ISCP command you wish to execute, see /c for a list of suggested parameters.
 /c                       When this command is set, a suggested list of commands is shown
                           Use Google to find a full list of commands supported by your receiver.
+/noConsole               When this parameter is set, there will be no visible console. Usefull for hotkeys etc.                          
 /increaseVolume=[steps]  Increase the master volume by [steps] steps.
 /decreaseVolume=[steps]  Decrease the master volume by [steps] steps.
 /setVolume=[volume]      Set the volume to [volume]
